@@ -5,7 +5,7 @@ using namespace v8;
 void Add(const FunctionCallbackInfo<Value>& args) {
     Isolate* isolate = args.GetIsolate();
 
-    if (args.Length() < 2) {
+    if (args.Length() != 2) {
         isolate->ThrowException(String::NewFromUtf8(isolate, "Function requires exactly two arguments").ToLocalChecked());
         return;
     }
